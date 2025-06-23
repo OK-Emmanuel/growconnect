@@ -15,7 +15,7 @@ export function Navbar() {
         <a href="#about" className="text-black hover:text-teal-700 font-medium transition-colors">About</a>
         <a href="#contact" className="text-black hover:text-teal-700 font-medium transition-colors">Contact</a>
         <a href="#blog" className="text-black hover:text-teal-700 font-medium transition-colors">Blog</a>
-        <a href="#get-in-touch" className="ml-4 bg-teal-700 text-white font-semibold rounded-full px-5 py-2 shadow hover:bg-amber-400 hover:text-black transition-colors">Get in touch</a>
+        <a href="#get-in-touch" className="ml-4 bg-teal-700 text-white font-semibold rounded-full px-5 py-2 shadow hover:bg-yellow-800 hover:text-black transition-colors">Get in touch</a>
       </div>
       {/* Mobile Nav (hamburger) */}
       <div className="md:hidden flex items-center">

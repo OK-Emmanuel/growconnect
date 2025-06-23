@@ -18,7 +18,7 @@ export function HeroBanner() {
             The G.R.O.W. Network (TGN) is where creators, entrepreneurs, and visionaries come to build legacies, unlock potential, and change the world.
           </p>
           <div className="flex gap-4">
-            <a href="#about" className="bg-amber-400 text-teal-900 font-semibold rounded-full px-6 py-3 shadow-md hover:bg-amber-300 transition-colors font-sans">Learn More</a>
+            <a href="#about" className="bg-yellow-800 text-teal-900 font-semibold rounded-full px-6 py-3 shadow-md hover:bg-amber-300 transition-colors font-sans">Learn More</a>
           </div>
         </div>
       </div>
