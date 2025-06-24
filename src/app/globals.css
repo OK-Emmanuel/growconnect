@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
-/* body {
-  @apply bg-background text-text font-sans;
-} */
+@theme{
+  --color-primary: #6A9F9C;
+  --color-secondary: #C29559;
+  --color-neutral: #F3F0F3;
+}
 
 * {
   font-family: 'Poppins', sans-serif;
 }
-

@@ -13,7 +13,7 @@ interface OfferCardProps {
 function OfferCard({ title, description, highlights, cta, href, image, reverse }: OfferCardProps) {
   return (
     <div
-      className={`bg-gray-100 shadow-lg flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} p-4 md:p-12 my-12 rounded-xl overflow-hidden`}
+      className={`bg-neutral shadow-lg flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} p-4 md:p-12 my-12 rounded-xl overflow-hidden`}
       style={{ minHeight: '80vh' }}
     >
       {/* Left: Text */}
@@ -105,7 +105,7 @@ export function SectionWhatWeOffer() {
   return (
     <section className="w-full bg-background text-text py-16 px-4">
       <div className="container mx-auto">
-        <h2 className="text-3xl sm:text-5xl font-bold mb-12 font-sans text-center">What We Offer</h2>
+        <h2 className="text-3xl sm:text-5xl font-bold mb-12 font-sans text-center text-primary">What We Offer</h2>
         <div className="flex flex-col gap-16">
           {offers.map((offer, idx) => (
             <OfferCard key={offer.title} {...offer} reverse={idx % 2 === 1} />

@@ -26,10 +26,10 @@ const stats = [
 
 export function SectionWhyTGN() {
   return (
-    <section className="w-full my-20 py-0 px-0">
+    <section className="w-full h-screen py-0 px-0">
       <div className="container mx-auto flex flex-col md:flex-row min-h-[60vh]">
         {/* Left: Heading & Text */}
-        <div className="flex-1 flex flex-col justify-center bg-[#223532] px-8 py-16 md:py-24 md:px-16 text-left">
+        <div className="flex-1 flex flex-col justify-center bg-primary px-8 py-16 md:py-24 md:px-16 text-left">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 font-sans text-white leading-tight">Why Choose TGN?</h2>
           <p className="text-lg md:text-xl mb-8 font-sans text-white/90">We don’t just talk about growth, we help you live it because we believe that WHATSOEVER YOU NURTURE, YOU BECOME. 
           </p>

@@ -12,13 +12,13 @@ export function HeroBanner() {
         {/* Left: Text Content */}
         <div className="flex-1 flex flex-col items-start text-left max-w-xl font-sans">
           <h1 className="text-3xl sm:text-5xl font-bold mb-4 text-white leading-tight font-sans">
-            Nurture Your Growth. <br className="hidden sm:block" />Transform Your Future. <br className="hidden sm:block" />Lead the Way.
+            Nurture Your Growth. <br className="hidden sm:block text-primary" />Transform Your Future. <br className="hidden sm:block" />Lead the Way.
           </h1>
           <p className="text-lg sm:text-xl mb-8 text-amber-100 font-medium font-sans">
             The G.R.O.W. Network (TGN) is where creators, entrepreneurs, and visionaries come to build legacies, unlock potential, and change the world.
-          </p>
+          </p>  
           <div className="flex gap-4">
-            <a href="#about" className="bg-yellow-800 text-teal-900 font-semibold rounded-full px-6 py-3 shadow-md hover:bg-amber-300 transition-colors font-sans">Learn More</a>
+            <a href="#about" className="bg-secondary text-primaryfont-semibold rounded-full px-6 py-3 shadow-md hover:bg-amber-300 transition-colors font-sans">Learn More</a>
           </div>
         </div>
       </div>

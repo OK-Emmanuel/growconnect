@@ -14,8 +14,8 @@ export function SectionWhatWeSee() {
         {/* Right: Text Content */}
         <div className="flex-1 flex flex-col items-start text-left font-sans">
           <div className="flex items-center mb-4">
-            <span className="inline-block w-12 h-1 bg-yellow-800 rounded-full mr-4" />
-            <h2 className="text-3xl sm:text-4xl font-bold text-teal-900 font-sans">What We See At TGN!</h2>
+            <span className="inline-block w-12 h-1 bg-secondary rounded-full mr-4" />
+            <h2 className="text-3xl sm:text-4xl font-bold text-primaryfont-sans">What We See At TGN!</h2>
           </div>
           <p className="text-base sm:text-lg mb-4 text-black font-sans">
             At TGN, we believe growth is a journey, not a destination. That's why we've built a dynamic platform where mentorship, community, and opportunity converge to help you achieve your biggest goals.
@@ -23,7 +23,7 @@ export function SectionWhatWeSee() {
           <p className="text-base sm:text-lg mb-8 text-black font-sans">
             Our vision? To empower 1,000,000 people by 2050 to create businesses, lead innovations, and inspire global change. Whether you're a budding entrepreneur, a creative mind, or a leader ready for your next chapter, we're here to help you grow.
           </p>
-          <a href="#about" className="inline-block border-2 border-yellow-800 text-teal-900 font-semibold rounded-full px-6 py-3 transition-colors hover:bg-yellow-800 hover:text-white font-sans">Learn More About TGN →</a>
+          <a href="#about" className="inline-block border-2 border-secondary text-primaryfont-semibold rounded-full px-6 py-3 transition-colors hover:bg-secondary hover:text-white font-sans">Learn More About TGN →</a>
         </div>
       </div>
     </section>
