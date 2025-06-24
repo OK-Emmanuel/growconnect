@@ -9,3 +9,23 @@
 * {
   font-family: 'Poppins', sans-serif;
 }
+
+/* Add this to your globals.css */
+.hero-section {
+  animation: bg-slide 20s infinite ease-in-out;
+}
+
+@keyframes bg-slide {
+  0% {
+    background-image: url('/hero-bg.jpg');
+  }
+  33% {
+    background-image: url('/hero-bg.jpg');
+  }
+  66% {
+    background-image: url('/hero-bg.jpg');
+  }
+  100% {
+    background-image: url('/hero-bg.jpg');
+  }
+}

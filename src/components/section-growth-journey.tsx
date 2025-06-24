@@ -1,24 +1,43 @@
-import React from 'react';
+'use client';
+
+import React, { useRef } from 'react';
+import { useScrollReveal } from '@/lib/hooks/useScrollReveal';
 
 export function SectionGrowthJourney() {
+  const sectionRef = useRef(null);
+
+  useScrollReveal('.growth-heading');
+  useScrollReveal('.growth-paragraph');
+  useScrollReveal('.growth-cta');
+
   return (
-    <section className="w-full bg-transparent py-16 px-4 flex flex-col items-center">
-      <div className="w-full h-16 md:h-24 rounded-b-3xl relative flex items-end justify-center">
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-full max-w-7xl">
-          <div className="bg-secondary rounded-2xl shadow-xl flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-10 md:py-14 w-full">
-            <div className="text-left flex-1">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2 font-sans text-white">Start Your Growth Journey Today</h2>
-              <p className="text-black">Whether you’re starting small or aiming big, TGN is here to support <br /> your growth every step of the way.</p>
-            </div>
+    <section
+      ref={sectionRef}
+      className="w-full bg-white relative z-10 pt-20 pb-24 px-4 flex flex-col items-center"
+    >
+      <div className="w-full max-w-7xl mx-auto relative z-20">
+        <div className="bg-secondary rounded-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 px-6 md:px-12 py-10 md:py-14">
+          {/* Text */}
+          <div className="text-left flex-1">
+            <h2 className="growth-heading text-2xl md:text-4xl font-bold text-white mb-3 font-sans">
+              Start Your Growth Journey Today
+            </h2>
+            <p className="growth-paragraph text-base md:text-lg text-white/90 font-sans">
+              Whether you're starting small or aiming big, TGN is here to support your growth — every step of the way.
+            </p>
+          </div>
+
+          {/* CTA */}
+          <div className="flex-shrink-0">
             <a
               href="#get-started"
-              className="mt-6 md:mt-0 bg-primary text-white font-semibold rounded-lg px-8 py-4 transition-colors hover:bg-gray-800 text-base font-sans shadow-md"
+              className="growth-cta inline-block bg-primary text-white font-semibold rounded-full px-6 py-4 text-base md:text-lg transition-colors hover:bg-black font-sans shadow-md"
             >
-              Talk with an expert
+              Talk with an Expert
             </a>
           </div>
         </div>
       </div>
     </section>
   );
-} 
+}

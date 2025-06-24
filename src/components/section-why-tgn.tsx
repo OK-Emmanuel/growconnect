@@ -1,46 +1,66 @@
-import React from 'react';
+'use client';
+
+import React, { useRef } from 'react';
+import { useScrollReveal } from '@/lib/hooks/useScrollReveal';
 
 const stats = [
   {
     number: 1,
-    // percent: '91%',
     title: 'Impactful Mentorship:',
     desc: 'Tailored support for your unique journey.',
-    color: 'bg-teal-500',
+    color: 'bg-secondary',
   },
   {
     number: 2,
-    // percent: '89%',
     title: 'Thriving Community:',
-    desc: 'A network of creators and entrepreneurs, marketing professionals who challenge and uplift one another.',
-    color: 'bg-teal-500',
+    desc: 'A network of creators, entrepreneurs, and marketing professionals who challenge and uplift one another.',
+    color: 'bg-secondary',
   },
   {
     number: 3,
-    // percent: '83%',
     title: 'Proven Success:',
     desc: 'Our programs drive real results, turning potential into achievement.',
-    color: 'bg-teal-500',
+    color: 'bg-secondary',
   },
 ];
 
 export function SectionWhyTGN() {
+  const sectionRef = useRef(null);
+
+  // Apply scroll reveal animation
+  useScrollReveal('.why-heading');
+  useScrollReveal('.why-paragraph');
+  useScrollReveal('.why-stat', { stagger: 0.2 });
+
   return (
-    <section className="w-full h-screen py-0 px-0">
-      <div className="container mx-auto flex flex-col md:flex-row min-h-[60vh]">
-        {/* Left: Heading & Text */}
-        <div className="flex-1 flex flex-col justify-center bg-primary px-8 py-16 md:py-24 md:px-16 text-left">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-sans text-white leading-tight">Why Choose TGN?</h2>
-          <p className="text-lg md:text-xl mb-8 font-sans text-white/90">We don’t just talk about growth, we help you live it because we believe that WHATSOEVER YOU NURTURE, YOU BECOME. 
+    <section ref={sectionRef} className="w-full py-0 px-0 bg-white">
+      <div className="flex flex-col md:flex-row min-h-[100vh]">
+        {/* Left: Heading & Paragraph */}
+        <div className="flex-1 bg-primary px-8 py-16 md:px-16 md:py-24 flex flex-col justify-center">
+          <h2 className="why-heading text-4xl md:text-5xl font-bold text-white mb-6 leading-tight font-sans">
+            Why Choose TGN?
+          </h2>
+          <p className="why-paragraph text-lg md:text-xl text-white/90 font-sans max-w-xl">
+            We don't just talk about growth, we help you live it—because we believe that <strong>WHATSOEVER YOU NURTURE, YOU BECOME.</strong>
           </p>
         </div>
-        {/* Right: Stats */}
-        <div className="flex-1 flex flex-col justify-center gap-10 py-16 md:py-24 px-8 md:px-16 bg-background">
-          {stats.map((stat, idx) => (
-            <div key={stat.number} className="flex items-center gap-8 mb-4">
-              <div className={`w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center text-3xl md:text-4xl font-bold text-white shadow-lg ring-4 ring-white ${stat.color}`}>{stat.number}</div>
-              <div>
-                <div className="text-2xl md:text-3xl font-bold text-black mb-1">{stat.title} <span className="font-semibold">{stat.desc}</span></div>
+
+        {/* Right: Numbered Stats */}
+        <div className="flex-1 bg-background px-8 py-16 md:px-16 md:py-24 flex flex-col justify-center gap-8">
+          {stats.map((stat) => (
+            <div key={stat.number} className="why-stat flex items-start gap-6">
+              <div
+                className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full ${stat.color} text-white flex items-center justify-center text-2xl md:text-3xl font-bold shadow-md ring-4 ring-white`}
+              >
+                {stat.number}
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl md:text-2xl font-bold text-black leading-snug mb-1">
+                  {stat.title}
+                </h3>
+                <p className="text-base md:text-lg text-gray-700 font-sans">
+                  {stat.desc}
+                </p>
               </div>
             </div>
           ))}
@@ -48,4 +68,4 @@ export function SectionWhyTGN() {
       </div>
     </section>
   );
-} 
+}
