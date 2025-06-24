@@ -23,7 +23,7 @@ export function SectionGrowthJourney() {
               Start Your Growth Journey Today
             </h2>
             <p className="growth-paragraph text-base md:text-lg text-white/90 font-sans">
-              Whether you're starting small or aiming big, TGN is here to support your growth — every step of the way.
+              Whether you are starting small or aiming big, TGN is here to support your growth — every step of the way.
             </p>
           </div>
 

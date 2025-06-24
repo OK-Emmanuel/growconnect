@@ -36,10 +36,10 @@ export function SectionWhatWeSee() {
             </h2>
           </div>
           <p className="see-paragraph text-base sm:text-lg mb-4 text-black">
-            At TGN, we believe growth is a journey, not a destination. That's why we've built a dynamic platform where mentorship, community, and opportunity converge to help you achieve your biggest goals.
+            At TGN, we believe growth is a journey, not a destination. That&apos;s why we&apos;ve built a dynamic platform where mentorship, community, and opportunity converge to help you achieve your biggest goals.
           </p>
           <p className="see-paragraph text-base sm:text-lg mb-8 text-black">
-            Our vision? To empower 1,000,000 people by 2050 to create businesses, lead innovations, and inspire global change. Whether you're a budding entrepreneur, a creative mind, or a leader ready for your next chapter, we're here to help you grow.
+            Our vision? To empower 1,000,000 people by 2050 to create businesses, lead innovations, and inspire global change. Whether you&apos;re a budding entrepreneur, a creative mind, or a leader ready for your next chapter, we&apos;re here to help you grow.
           </p>
           <a
             href="#about"

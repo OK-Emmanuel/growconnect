@@ -43,7 +43,7 @@ export function Footer() {
       {/* CTA */}
       <div className="w-full max-w-2xl mx-auto mb-12">
         <h2 className="footer-heading text-2xl md:text-3xl font-bold mb-3 text-white font-sans">
-          Let's connect!
+          Let&apos;s connect!
         </h2>
         <p className="footer-paragraph mb-6 text-white/80 font-sans text-base">
           Connect to the GROW Network for updates, insights, and exclusive opportunities.

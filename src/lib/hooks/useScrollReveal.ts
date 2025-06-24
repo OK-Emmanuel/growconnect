@@ -11,7 +11,7 @@ export const useScrollReveal = (
   options: gsap.TweenVars = {}
 ) => {
   useEffect(() => {
-    let animations: gsap.core.Tween[] = [];
+    const animations: gsap.core.Tween[] = [];
 
     if (typeof target === 'string') {
       const elements = gsap.utils.toArray<Element>(target);

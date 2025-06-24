@@ -11,14 +11,14 @@ export function SectionConference() {
 
   return (
     <section id="conference" ref={sectionRef} className="w-full py-20">
-      <div className="container mx-auto flex flex-col md:flex-row items-stretch min-h-[60vh] bg-white rounded-2xl shadow-lg overflow-hidden">
+      <div className="container mx-auto flex flex-col md:flex-row items-stretch min-h-[60vh] bg-neutral rounded-2xl shadow-lg overflow-hidden">
         {/* Left: Text Content */}
         <div className="flex-1 flex flex-col justify-center px-8 py-16 md:py-24 md:px-12">
           <h2 className="conference-heading text-3xl md:text-5xl font-bold mb-6 text-black leading-tight font-sans">
             Experience the <span className="text-secondary">G.R.O.W. Conference</span>
           </h2>
           <p className="conference-paragraph text-base md:text-lg mb-6 text-black font-sans">
-            Imagine an event where your ideas take center stage, where you're surrounded by like-minded visionaries, and where growth becomes inevitable.
+            Imagine an event where your ideas take center stage, where you are surrounded by like-minded visionaries, and where growth becomes inevitable.
           </p>
           <ul className="conference-list text-base md:text-lg mb-6 list-disc list-inside text-black font-sans pl-4">
             <li className="mb-2"><span className="font-semibold text-primary">Inspiring workshops</span> with industry leaders.</li>
