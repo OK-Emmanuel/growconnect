@@ -41,7 +41,7 @@ export function SectionWhyTGN() {
             Why Choose TGN?
           </h2>
           <p className="why-paragraph text-lg md:text-xl text-white/90 font-sans max-w-xl">
-            We don't just talk about growth, we help you live it—because we believe that <strong>WHATSOEVER YOU NURTURE, YOU BECOME.</strong>
+            We don&apos;t just talk about growth, we help you live it—because we believe that <strong>WHATSOEVER YOU NURTURE, YOU BECOME.</strong>
           </p>
         </div>
 
