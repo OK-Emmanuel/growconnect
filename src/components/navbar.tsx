@@ -26,16 +26,17 @@ export function Navbar() {
       <div className="max-w-screen-xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="nav-logo flex items-center gap-2">
-          <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
+          <img src="./logo-colored.png" className="w-20 h-auto" alt="" />
+          {/* <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
             TGN
-          </div>
-          <span className="font-bold text-teal-800 text-xl font-sans">The GROW Network</span>
+          </div> */}
+          {/* <span className="font-bold text-teal-800 text-xl font-sans">The GROW Network</span> */}
         </div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-6">
           <a href="#about" className="nav-link text-black hover:text-primary font-medium transition-colors">About</a>
-          <a href="#offerings" className="nav-link text-black hover:text-primary font-medium transition-colors">Offerings</a>
+          <a href="#initiatives" className="nav-link text-black hover:text-primary font-medium transition-colors">Initiatives</a>
           <a href="#conference" className="nav-link text-black hover:text-primary font-medium transition-colors">Conference</a>
           <a href="#contact" className="nav-cta ml-4 bg-secondary text-white font-semibold rounded-full px-5 py-2 shadow hover:bg-primary hover:text-black transition-colors">Get in touch</a>
         </div>

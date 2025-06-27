@@ -29,7 +29,7 @@ export function SectionConference() {
             Mark Your Calendar: Be part of the movement at the next G.R.O.W. Conference!
           </div>
           <a
-            href="#conference"
+            href="https://bit.ly/TGC2025"
             className="inline-block bg-secondary text-white font-semibold rounded-full px-8 py-4 transition-colors hover:bg-primary hover:text-white text-lg font-sans shadow-md"
           >
             Reserve Your Seat →

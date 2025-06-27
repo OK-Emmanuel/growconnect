@@ -64,6 +64,7 @@ export function SectionWhyTGN() {
               </div>
             </div>
           ))}
+       
         </div>
       </div>
     </section>

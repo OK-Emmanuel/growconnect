@@ -3,7 +3,7 @@ import { SectionWhatWeSee } from "@/components/section-what-we-see";
 import { SectionWhatWeOffer } from "@/components/section-what-we-offer";
 import { SectionConference } from "@/components/section-conference";
 import { SectionWhyTGN } from "@/components/section-why-tgn";
-import { SectionGrowthJourney } from "@/components/section-growth-journey";
+// import { SectionGrowthJourney } from "@/components/section-growth-journey";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
       <SectionWhatWeOffer />
       <SectionConference />
       <SectionWhyTGN />
-      <SectionGrowthJourney />
+      {/* <SectionGrowthJourney /> */}
       <Footer />
     </main>
   );

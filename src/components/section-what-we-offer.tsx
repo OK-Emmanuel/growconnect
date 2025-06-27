@@ -83,6 +83,7 @@ export function SectionWhatWeOffer() {
       href: 'http://thegrowconference.co/tgc',
       image: '/what-we-see.jpg',
     },
+   
     {
       title: 'TGN Talent',
       description: 'A 3-month mentorship program to help you master your craft, refine your vision, and achieve your career goals in marketing and strategy.',
@@ -96,6 +97,22 @@ export function SectionWhatWeOffer() {
       image: '/what-we-see.jpg',
     },
     {
+      title: 'The G.R.O.W. Circle',
+      description: 'Our mission is to foster an environment where knowledge, experience, accountability, and support converge to empower each member on their path to greater profitability, unwavering commitment, and unparalleled freedom.',
+      highlights: [
+        'Daily Check-ins and Implementation Support',
+        '⁠Bi-weekly general and focus work sessions', 
+        '⁠Accountability partners and support', 
+        '⁠Quarterly 1:1 checkin strategy calls with Lucky Elohor', 
+        '⁠Biannual In-person Gatherings'
+
+      ],
+      cta: 'Subscribe to the G.R.O.W Circle →',
+      href: 'http://thegrownetwork.selar.com/circle',
+      image: '/what-we-see.jpg',
+    },
+    
+    {
       title: 'TGN Launchpad',
       description: 'From idea to execution, our Launchpad is your roadmap to building a scalable and successful business.',
       highlights: [
@@ -103,18 +120,18 @@ export function SectionWhatWeOffer() {
         'Expert workshops and hands-on training.',
         'Showcase your achievements at our Annual G.R.O.W. Conference.',
       ],
-      cta: 'Start Your Business Journey →',
+      cta: 'COMING SOON! →',
       image: '/what-we-see.jpg',
     },
     {
       title: 'TGN Accelerator Alumni Network',
-      description: 'A lifelong network for graduates of our programs, giving you access to ongoing support, exclusive perks, and collaboration opportunities.',
+      description: 'A pool of founders, marketing and strategy professionals, and individuals building businesses or brands across Africa.',
       highlights: [
         'Exclusive access to resources, workshops, and events.',
         'Networking with like-minded leaders and innovators.',
         'Continued mentorship to help you scale your impact.',
       ],
-      cta: 'Unlock Alumni Perks →',
+      cta: 'COMING SOON! →',
       image: '/what-we-see.jpg',
     },
   ];
@@ -122,7 +139,7 @@ export function SectionWhatWeOffer() {
   const bgVariants = ['bg-neutral', 'bg-primary/40', 'bg-secondary/40', 'bg-neutral'];
 
   return (
-    <section id="offerings" className="w-full py-20 px-4 text-text">
+    <section id="initiatives" className="w-full py-20 px-4 text-text">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl sm:text-5xl font-bold text-center text-primary mb-16">What We Offer</h2>
         <div className="flex flex-col gap-16">

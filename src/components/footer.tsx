@@ -6,11 +6,12 @@ import gsap from 'gsap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebookF,
-  faGoogle,
+  
   faLinkedinIn,
-  faTwitter,
+  faInstagram,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 export function Footer() {
   const footerRef = useRef(null);
@@ -42,7 +43,11 @@ export function Footer() {
     >
       {/* CTA */}
       <div className="w-full max-w-2xl mx-auto mb-12">
-        <h2 className="footer-heading text-2xl md:text-3xl font-bold mb-3 text-white font-sans">
+      <img src="./logo-white.png" className="w-40 h-auto m-auto mb-4" alt="" />
+      <h2 className="footer-heading text-2xl md:text-3xl font-bold mb-3 text-white font-sans">
+         The future belongs to those who nurture their growth. Because Whatsoever you nurture, you become.
+        </h2>
+        {/* <h2 className="footer-heading text-2xl md:text-3xl font-bold mb-3 text-white font-sans">
           Let&apos;s connect!
         </h2>
         <p className="footer-paragraph mb-6 text-white/80 font-sans text-base">
@@ -60,15 +65,15 @@ export function Footer() {
           >
             Join
           </button>
-        </form>
+        </form> */}
       </div>
 
       {/* Social Links */}
       <div className="footer-social flex gap-5 justify-center mb-10">
-        <a href="#" className="text-white/70 hover:text-white transition-colors text-xl" aria-label="Facebook"><FontAwesomeIcon icon={faFacebookF} /></a>
-        <a href="#" className="text-white/70 hover:text-white transition-colors text-xl" aria-label="Google"><FontAwesomeIcon icon={faGoogle} /></a>
-        <a href="#" className="text-white/70 hover:text-white transition-colors text-xl" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedinIn} /></a>
-        <a href="#" className="text-white/70 hover:text-white transition-colors text-xl" aria-label="Twitter"><FontAwesomeIcon icon={faTwitter} /></a>
+        {/* <a href="#" className="text-white/70 hover:text-white transition-colors text-xl" aria-label="Facebook"><FontAwesomeIcon icon={faFacebookF} /></a> */}
+        <a href="hello@thegrownetwork.co" className="text-white/70 hover:text-white transition-colors text-xl" aria-label="Google"><FontAwesomeIcon icon={faEnvelope} /></a>
+        {/* <a href="#" className="text-white/70 hover:text-white transition-colors text-xl" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedinIn} /></a> */}
+        {/* <a href="https://instagram.com/thegrownetwork_" className="text-white/70 hover:text-white transition-colors text-xl" aria-label="Twitter"><FontAwesomeIcon icon={faInstagram} /></a> */}
         <a href="#" className="text-white/70 hover:text-white transition-colors text-xl" aria-label="YouTube"><FontAwesomeIcon icon={faYoutube} /></a>
       </div>
 
