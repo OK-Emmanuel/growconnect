@@ -35,8 +35,9 @@ export function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-6">
-          <a href="#about" className="nav-link text-black hover:text-primary font-medium transition-colors">About</a>
+          <a href="#about" className="nav-link text-black hover:text-primary font-medium transition-colors">About TGN</a>
           <a href="#initiatives" className="nav-link text-black hover:text-primary font-medium transition-colors">Initiatives</a>
+          <a href="magazine" className="nav-link text-black hover:text-primary font-medium transition-colors">G.R.O.W. Magazine</a>
           <a href="#conference" className="nav-link text-black hover:text-primary font-medium transition-colors">Conference</a>
           <a href="#contact" className="nav-cta ml-4 bg-secondary text-white font-semibold rounded-full px-5 py-2 shadow hover:bg-primary hover:text-black transition-colors">Get in touch</a>
         </div>
