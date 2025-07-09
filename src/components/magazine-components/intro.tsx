@@ -1,10 +1,16 @@
 'use client';
 
-import React, { useRef } from 'react';
-import { useScrollReveal } from '@/lib/hooks/useScrollReveal'; // assumes you created it
+import React, { useRef, useState } from 'react';
+import { useScrollReveal } from '@/lib/hooks/useScrollReveal';
+import { PDFViewer } from './pdf-viewer';
 
 export function Intro() {
     const sectionRef = useRef(null);
+    const [showPDFViewer, setShowPDFViewer] = useState(false);
+
+    const handleOpenPDF = () => {
+        setShowPDFViewer(true);
+    };
 
     useScrollReveal('.see-img, .see-heading, .see-paragraph, .see-cta');
 
@@ -24,17 +30,17 @@ export function Intro() {
                         </h2>
                     </div>
                     <p className="see-paragraph text-base sm:text-lg mb-4 text-black">
-  Welcome to &ldquo;What Am I Building&rdquo; &ndash; the compass for entrepreneurs navigating the exhilarating chaos of creation. This isn&rsquo;t just another business publication; it&rsquo;s a mirror held up to the builder&rsquo;s soul, a space where we confront the fundamental question that keeps founders awake at 3 AM yet fuels their mornings.
+  Welcome to &ldquo; <b>What Am I Building&rdquo; </b> &ndash; the compass for entrepreneurs navigating the exhilarating chaos of creation. This isn&rsquo;t just another business publication; it&rsquo;s a mirror held up to the builder&rsquo;s soul, a space where we confront the fundamental question that keeps founders awake at 3 AM yet fuels their mornings.
 </p>
 <p className="see-paragraph text-base sm:text-lg mb-8 text-black">
   Between these pages, you&rsquo;ll find not answers, but better questions &ndash; the kind that transform garage-daydreams into viable ventures, side-hustles into institutions, and founders into architects of the future. Whether you&rsquo;re laying your first brick or reconstructing your entire blueprint, this edition meets you where every true builder ultimately resides: in the messy, magnificent space between vision and reality
 </p>
-                    <a
-                        href="#about"
-                        className="see-cta inline-block border-2 border-secondary text-primary font-semibold rounded-full px-6 py-3 transition-colors hover:bg-secondary hover:text-white"
-                    >
-                        Read Full Magazine →
-                    </a>
+<button
+    onClick={handleOpenPDF}
+    className="see-cta inline-block border-2 border-secondary text-primary font-semibold rounded-full px-6 py-3 transition-colors hover:bg-secondary hover:text-white cursor-pointer"
+>
+    Read Full Magazine →
+</button>
                 </div>
 
                 {/* Left: Image */}
@@ -49,6 +55,14 @@ export function Intro() {
                     </div>
                 </div>
             </div>
+            
+            {/* PDF Viewer Modal */}
+            {showPDFViewer && (
+                <PDFViewer 
+                    pdfUrl="/assets/frontend.pdf" 
+                    onClose={() => setShowPDFViewer(false)} 
+                />
+            )}
         </section>
     );
 }

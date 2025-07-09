@@ -14,6 +14,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "The G.R.O.W. Network",
   description: "The G.R.O.W. Network is where creators, entrepreneurs, and visionaries come to build legacies, unlock potential, and change the world.",
+  
 };
 
 export default function RootLayout({

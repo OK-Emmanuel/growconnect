@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
 export function Navbar() {
   const navRef = useRef(null);
+  const mobileMenuRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
   useGSAP(() => {
@@ -17,7 +18,41 @@ export function Navbar() {
       ease: 'power2.out',
     });
   }, { scope: navRef });
-  
+
+  // Animate mobile menu
+  useEffect(() => {
+    if (isOpen) {
+      gsap.fromTo(
+        mobileMenuRef.current,
+        { opacity: 0, y: -10 },
+        { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }
+      );
+    } else {
+      gsap.to(mobileMenuRef.current, {
+        opacity: 0,
+        y: -10,
+        duration: 0.2,
+        ease: 'power2.in',
+        onComplete: () => {
+          if (mobileMenuRef.current) {
+            mobileMenuRef.current.style.display = 'none';
+          }
+        },
+      });
+    }
+
+    if (mobileMenuRef.current && isOpen) {
+      mobileMenuRef.current.style.display = 'flex';
+    }
+  }, [isOpen]);
+
+  const navLinks = [
+    { name: 'About TGN', href: '#about' },
+    { name: 'Initiatives', href: '#initiatives' },
+    { name: 'G.R.O.W. Magazine', href: 'magazine' },
+    { name: 'G.R.O.W. Conference', href: '#conference' },
+  ];
+
   return (
     <nav
       ref={navRef}
@@ -27,19 +62,25 @@ export function Navbar() {
         {/* Logo */}
         <div className="nav-logo flex items-center gap-2">
           <img src="./logo-colored.png" className="w-20 h-auto" alt="" />
-          {/* <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
-            TGN
-          </div> */}
-          {/* <span className="font-bold text-teal-800 text-xl font-sans">The GROW Network</span> */}
         </div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-6">
-          <a href="#about" className="nav-link text-black hover:text-primary font-medium transition-colors">About TGN</a>
-          <a href="#initiatives" className="nav-link text-black hover:text-primary font-medium transition-colors">Initiatives</a>
-          <a href="magazine" className="nav-link text-black hover:text-primary font-medium transition-colors">G.R.O.W. Magazine</a>
-          <a href="#conference" className="nav-link text-black hover:text-primary font-medium transition-colors">Conference</a>
-          <a href="#contact" className="nav-cta ml-4 bg-secondary text-white font-semibold rounded-full px-5 py-2 shadow hover:bg-primary hover:text-black transition-colors">Get in touch</a>
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="nav-link text-black hover:text-primary font-medium transition-colors"
+            >
+              {link.name}
+            </a>
+          ))}
+          <a
+            href="#contact"
+            className="nav-cta ml-4 bg-secondary text-white font-semibold rounded-full px-5 py-2 shadow hover:bg-primary hover:text-black transition-colors"
+          >
+            Get in touch
+          </a>
         </div>
 
         {/* Mobile Hamburger */}
@@ -57,27 +98,28 @@ export function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden mt-4 px-4 space-y-4 flex flex-col bg-white rounded-md py-4 shadow-lg">
-          {['Projects', 'Careers', 'About', 'Contact', 'Blog'].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="text-black hover:text-primary font-medium transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              {item}
-            </a>
-          ))}
+      <div
+        ref={mobileMenuRef}
+        className="md:hidden mt-4 px-4 space-y-4 flex-col bg-white rounded-md py-4 shadow-lg hidden"
+      >
+        {navLinks.map((link) => (
           <a
-            href="#get-in-touch"
-            className="bg-secondary text-white text-center font-semibold rounded-full px-5 py-2 shadow hover:bg-primary hover:text-black transition-colors"
+            key={link.name}
+            href={link.href}
+            className="text-black hover:text-primary font-medium transition-colors"
             onClick={() => setIsOpen(false)}
           >
-            Get in touch
+            {link.name}
           </a>
-        </div>
-      )}
+        ))}
+        <a
+          href="#contact"
+          className="bg-secondary text-white text-center font-semibold rounded-full px-5 py-2 shadow hover:bg-primary hover:text-black transition-colors"
+          onClick={() => setIsOpen(false)}
+        >
+          Get in touch
+        </a>
+      </div>
     </nav>
   );
 }

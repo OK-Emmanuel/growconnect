@@ -5,9 +5,6 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faFacebookF,
-  
-  faLinkedinIn,
   faInstagram,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
@@ -71,7 +68,8 @@ export function Footer() {
       {/* Social Links */}
       <div className="footer-social flex gap-5 justify-center mb-10">
         {/* <a href="#" className="text-white/70 hover:text-white transition-colors text-xl" aria-label="Facebook"><FontAwesomeIcon icon={faFacebookF} /></a> */}
-        <a href="hello@thegrownetwork.co" className="text-white/70 hover:text-white transition-colors text-xl" aria-label="Google"><FontAwesomeIcon icon={faEnvelope} /></a>
+        <a href="mailto:hello@thegrownetwork.co" className="text-white/70 hover:text-white transition-colors text-xl" aria-label="Email"><FontAwesomeIcon icon={faEnvelope} /></a>
+        <a href="https://www.instagram.com/thegrownetwork_" className="text-white/70 hover:text-white transition-colors text-xl" aria-label="Instagram"><FontAwesomeIcon icon={faInstagram} /></a>
         {/* <a href="#" className="text-white/70 hover:text-white transition-colors text-xl" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedinIn} /></a> */}
         {/* <a href="https://instagram.com/thegrownetwork_" className="text-white/70 hover:text-white transition-colors text-xl" aria-label="Twitter"><FontAwesomeIcon icon={faInstagram} /></a> */}
         <a href="#" className="text-white/70 hover:text-white transition-colors text-xl" aria-label="YouTube"><FontAwesomeIcon icon={faYoutube} /></a>
