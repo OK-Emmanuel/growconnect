@@ -59,7 +59,7 @@ export function Intro() {
             {/* PDF Viewer Modal */}
             {showPDFViewer && (
                 <PDFViewer 
-                    pdfUrl="/assets/frontend.pdf" 
+                    pdfUrl="/assets/grow-magazine.pdf" 
                     onClose={() => setShowPDFViewer(false)} 
                 />
             )}
