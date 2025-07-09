@@ -5,8 +5,8 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
 export function Navbar() {
-  const navRef = useRef(null);
-  const mobileMenuRef = useRef(null);
+  const navRef = useRef<HTMLElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
 
   useGSAP(() => {

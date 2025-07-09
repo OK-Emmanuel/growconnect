@@ -13,7 +13,7 @@ interface PDFViewerProps {
 
 export function PDFViewer({ pdfUrl, onClose }: PDFViewerProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [pdfDoc, setPdfDoc] = useState<any>(null);
+  const [pdfDoc, setPdfDoc] = useState<pdfjsLib.PDFDocumentProxy | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -41,44 +41,7 @@ export function PDFViewer({ pdfUrl, onClose }: PDFViewerProps) {
     setScale(prev => prev > 0.5 ? prev - 0.2 : prev);
   }, []);
 
-  useEffect(() => {
-    loadPDF();
-  }, [pdfUrl]);
-
-  useEffect(() => {
-    if (pdfDoc) {
-      renderPage(currentPage);
-    }
-  }, [pdfDoc, currentPage, scale, viewMode]);
-
-  // Add keyboard navigation
-  useEffect(() => {
-    const handleKeyPress = (event: KeyboardEvent) => {
-      if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
-        event.preventDefault();
-        goToPrevPage();
-      } else if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
-        event.preventDefault();
-        goToNextPage();
-      } else if (event.key === 'Escape') {
-        event.preventDefault();
-        onClose();
-      } else if (event.key === '+' || event.key === '=') {
-        event.preventDefault();
-        zoomIn();
-      } else if (event.key === '-') {
-        event.preventDefault();
-        zoomOut();
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyPress);
-    return () => {
-      document.removeEventListener('keydown', handleKeyPress);
-    };
-  }, [goToPrevPage, goToNextPage, onClose, zoomIn, zoomOut]);
-
-  const loadPDF = async () => {
+  const loadPDF = React.useCallback(async () => {
     try {
       setLoading(true);
       const loadingTask = pdfjsLib.getDocument(pdfUrl);
@@ -90,9 +53,9 @@ export function PDFViewer({ pdfUrl, onClose }: PDFViewerProps) {
       console.error('Error loading PDF:', error);
       setLoading(false);
     }
-  };
+  }, [pdfUrl]);
 
-  const renderPage = async (pageNumber: number) => {
+  const renderPage = React.useCallback(async (pageNumber: number) => {
     if (!pdfDoc || !canvasRef.current) return;
 
     try {
@@ -127,7 +90,44 @@ export function PDFViewer({ pdfUrl, onClose }: PDFViewerProps) {
     } catch (error) {
       console.error('Error rendering page:', error);
     }
-  };
+  }, [pdfDoc, scale, viewMode]);
+
+  useEffect(() => {
+    loadPDF();
+  }, [loadPDF]);
+
+  useEffect(() => {
+    if (pdfDoc) {
+      renderPage(currentPage);
+    }
+  }, [pdfDoc, currentPage, renderPage]);
+
+  // Add keyboard navigation
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        goToPrevPage();
+      } else if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+        event.preventDefault();
+        goToNextPage();
+      } else if (event.key === 'Escape') {
+        event.preventDefault();
+        onClose();
+      } else if (event.key === '+' || event.key === '=') {
+        event.preventDefault();
+        zoomIn();
+      } else if (event.key === '-') {
+        event.preventDefault();
+        zoomOut();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [goToPrevPage, goToNextPage, onClose, zoomIn, zoomOut]);
 
   if (loading) {
     return (
